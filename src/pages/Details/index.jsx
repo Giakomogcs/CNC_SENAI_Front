@@ -1,7 +1,7 @@
 import {Container, Content} from "./styles"
 
 import { Header } from "../../components/Header"
-import { Button } from "../../components/Button"
+import { BackendDataChart } from "../../components/Graphic"
 
 
 export function Details(){
@@ -12,7 +12,14 @@ export function Details(){
 
       <main>
         <Content>
-          <h1>Disponibilidade CNC SENAI</h1>
+          <div className="Title">
+            <h1>Disponibilidade CNC SENAI</h1>
+          </div>
+
+          <div className="Graphic">
+            <BackendDataChart/>
+          </div>
+
 
         </Content>
       </main>

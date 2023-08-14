@@ -11,6 +11,7 @@ export function Header() {
   return (
     <Container>
       <img src="/images/SENAI_Logo.png" alt="Logo Istituto SENAI de Tecnologia" />
+      
       <Input options={optionsArray} />
     </Container>
   );
