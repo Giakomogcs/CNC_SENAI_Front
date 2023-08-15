@@ -30,6 +30,11 @@ export default {
 
     CAKE_100: '#065E7C',
     CAKE_200: '#82F3FF',
+
+    WORKING_1: '#4AA250',
+    WORKING_0: '#E5C15E',
+    AVAILABLE_1: '#E5C15E',
+    AVAILABLE_0: '#4AA250',
     
   }
 }

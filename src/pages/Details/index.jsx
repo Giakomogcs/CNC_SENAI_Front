@@ -1,7 +1,7 @@
 import {Container, Content} from "./styles"
 
 import { Header } from "../../components/Header"
-import { BackendDataChart } from "../../components/Graphic"
+import { TableWork } from "../../components/Table"
 
 
 export function Details(){
@@ -17,7 +17,7 @@ export function Details(){
           </div>
 
           <div className="Graphic">
-            <BackendDataChart/>
+            <TableWork/>
           </div>
 
 
