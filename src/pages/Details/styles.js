@@ -38,7 +38,7 @@ export const Content = styled.div`
         grid-area: "graphic";
         
         display: flex;
-        flex-direction: column;
+        gap: 50px;
         align-items: center;
         justify-content: center;
     }

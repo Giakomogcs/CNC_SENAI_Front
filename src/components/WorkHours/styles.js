@@ -1,6 +1,5 @@
 import styled  from "styled-components";
 
-
 export const Container = styled.div`
 
     margin: 0;
@@ -34,8 +33,7 @@ export const Container = styled.div`
             
         text-align: center;
         width: 100%;
-        height: auto;
-        max-height: 570px;
+        max-height: 600px;
         border-radius: 10px ;
         border-collapse: collapse;
 
@@ -61,8 +59,8 @@ export const Container = styled.div`
         }
 
         >tbody{
-            height: auto;
-            border-radius: 10px ;
+            height: 600px;
+            border-radius: 10px;
         }
     }
     

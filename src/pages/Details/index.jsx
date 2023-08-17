@@ -2,6 +2,7 @@ import {Container, Content} from "./styles"
 import React, { useEffect, useState } from 'react';
 import { Header } from "../../components/Header"
 import { TableWork } from "../../components/Table"
+import { WorkHours } from "../../components/WorkHours"
 
 
 export function Details(){
@@ -29,6 +30,7 @@ export function Details(){
 
           <div className="Graphic">
             <TableWork filter={filter}/>
+            <WorkHours filter={filter}/>
           </div>
 
 

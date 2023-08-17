@@ -4,8 +4,6 @@ import { Container, TableCell } from './styles'; // Importe os componentes estil
 
 export function TableWork({ filter }) {
   const [datas, setDatas] = useState([]);
-  // const startDate = '09/08/2023 00:00:00'; // Data de início no formato "DD/MM/YYYY HH:mm:ss"
-  // const endDate = '11/08/2023 23:59:59'; // Data de fim no formato "DD/MM/YYYY HH:mm:ss"
   const { startDate, endDate, selectedMachine } = filter;
 
   useEffect(() => {
