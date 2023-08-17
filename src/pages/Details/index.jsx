@@ -1,14 +1,25 @@
 import {Container, Content} from "./styles"
-
+import React, { useEffect, useState } from 'react';
 import { Header } from "../../components/Header"
 import { TableWork } from "../../components/Table"
 
 
 export function Details(){
+
+  const [filter, setFilter] = useState({
+    startDate: null,
+    endDate: null,
+    selectedMachine: '',
+  });
+
+  const handleFilterChange = (newFilter) => {
+    console.log("filtrou")
+    setFilter(newFilter);
+  };
   
   return(
     <Container>
-      <Header/>
+      <Header onFilterChange={handleFilterChange}/>
 
       <main>
         <Content>
@@ -17,7 +28,7 @@ export function Details(){
           </div>
 
           <div className="Graphic">
-            <TableWork/>
+            <TableWork filter={filter}/>
           </div>
 
 

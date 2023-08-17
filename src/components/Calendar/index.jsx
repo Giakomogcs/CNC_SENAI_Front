@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import { Container } from './styles'; // Importe os componentes estilizados
 
-export function Calendar() {
+export function Calendar({ selectedStartDate, selectedEndDate, onStartDateChange, onEndDateChange }) {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
 
     const handleStartDateChange = (date) => {
         setStartDate(date);
+        onStartDateChange(date)
     };
 
     const handleEndDateChange = (date) => {
         setEndDate(date);
+        onEndDateChange(date);
     };
 
     return (

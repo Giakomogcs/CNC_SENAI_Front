@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, TableCell } from './styles'; // Importe os componentes estilizados
 
-export function TableWork() {
+export function TableWork({ filter }) {
   const [datas, setDatas] = useState([]);
-  const startDate = '09/08/2023 00:00:00'; // Data de início no formato "DD/MM/YYYY HH:mm:ss"
-  const endDate = '11/08/2023 23:59:59'; // Data de fim no formato "DD/MM/YYYY HH:mm:ss"
+  // const startDate = '09/08/2023 00:00:00'; // Data de início no formato "DD/MM/YYYY HH:mm:ss"
+  // const endDate = '11/08/2023 23:59:59'; // Data de fim no formato "DD/MM/YYYY HH:mm:ss"
+  const { startDate, endDate, selectedMachine } = filter;
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3333/data/machine1', {
+    console.log(selectedMachine)
+    if (startDate && endDate && selectedMachine) {
+      axios
+      .get(`http://localhost:3333/data/${selectedMachine}`, {
         params: {
           start: startDate,
           end: endDate,
@@ -17,11 +20,13 @@ export function TableWork() {
       })
       .then(response => {
         setDatas(response.data.datas);
-      })
-      .catch(error => {
-        console.error('Erro ao buscar dados do backend:', error);
-      });
-  }, []);
+        console.log(response.data.datas)
+        })
+        .catch(error => {
+          console.error('Erro ao buscar dados do backend:', error);
+        });
+    }
+  }, [filter]);
 
   return (
     <Container>
