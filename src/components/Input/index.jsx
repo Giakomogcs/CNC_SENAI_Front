@@ -1,12 +1,13 @@
 
 import { Container, Option } from "./styles";
 
-export function Input({options , ...rest}){
+export function Input({machines}){
+  console.log(`options: ${machines}`)
   return(
     <Container>
-      {options.map((option, index) => (
-        <Option key={index} value={option.value}>
-          {option.label}
+      {machines.map((machine) => (
+        <Option key={machine.id} value={machine.name}>
+          {machine.name}
         </Option>
       ))}
     </Container>
