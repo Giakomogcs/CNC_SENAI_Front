@@ -20,6 +20,13 @@ export const Container = styled.header`
     width: 300px;
   }
 
+  >div{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+  }
+
 
 
 

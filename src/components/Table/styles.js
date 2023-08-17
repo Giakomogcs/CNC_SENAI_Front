@@ -38,7 +38,7 @@ export const Container = styled.div`
         border-radius: 10px ;
         border-collapse: collapse;
 
-        background-color: ${({theme}) => theme.COLORS.LIGHT_700};
+        background-color: ${({theme}) => theme.COLORS.LIGHT_600};
         
 
         >thead{
@@ -50,7 +50,7 @@ export const Container = styled.div`
                 th{
                     width: 80px;
                     padding: 5px;
-                    border: 1px solid ${({theme}) => theme.COLORS.DARK_800};
+                    border: 1px solid ${({theme}) => theme.COLORS.DARK_1000};
                 }
 
                 th:first-child{
@@ -79,7 +79,7 @@ export const Container = styled.div`
         margin: 0;
         padding: 0;
 
-        background-color: ${({theme}) => theme.COLORS.DARK_1000};
+        background-color: ${({theme}) => theme.COLORS.LIGHT_700};
         //border-radius: 10px;
         color: white;
         font-family: Roboto;
@@ -89,7 +89,7 @@ export const Container = styled.div`
 
 export const TableCell = styled.td`
   padding: 8px;
-  border: 1px solid ${({theme}) => theme.COLORS.DARK_800};
+  border: 1px solid ${({theme}) => theme.COLORS.DARK_1000};
   
   &.working {
     background-color: ${({theme}) => theme.COLORS.WORKING_1}; /* Cor para "Working" verdadeiro */
