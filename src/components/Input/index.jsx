@@ -11,6 +11,7 @@ export function Input({machines, onMachineChange}){
 
   return(
     <Container  onChange={handleMachineChange}>
+      <option value="">select a machine</option>
       {machines.map((machine) => (
         <Option key={machine.id} value={machine.name}>
           {machine.name.toUpperCase()}

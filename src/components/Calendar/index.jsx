@@ -22,34 +22,34 @@ export function Calendar({ selectedStartDate, selectedEndDate, onStartDateChange
     return (
         <Container>
             <div className="calendar">
-            <DatePicker
-                selected={startDate}
-                onChange={handleStartDateChange}
-                selectsStart
-                startDate={startDate}
-                endDate={endDate}
-                placeholderText="Data de início"
-                dateFormat="dd/MM/yyyy HH:mm:ss"
-                showTimeSelect // Ativar seleção de hora
-                timeFormat="HH:mm:ss" // Formato da hora
-                timeIntervals={15} // Intervalo de seleção de minutos
-                timeCaption="Hora"
-                className="custom-datepicker"
-            />
-            <DatePicker
-                selected={endDate}
-                onChange={handleEndDateChange}
-                selectsEnd
-                startDate={startDate}
-                endDate={endDate}
-                placeholderText="Data de fim"
-                dateFormat="dd/MM/yyyy HH:mm:ss"
-                showTimeSelect // Ativar seleção de hora
-                timeFormat="HH:mm:ss" // Formato da hora
-                timeIntervals={15} // Intervalo de seleção de minutos
-                timeCaption="Hora"
-                className="custom-datepicker"
-            />
+                <DatePicker
+                    selected={startDate}
+                    onChange={handleStartDateChange}
+                    selectsStart
+                    startDate={startDate}
+                    endDate={endDate}
+                    placeholderText="Data de início"
+                    dateFormat="dd/MM/yyyy HH:mm:ss"
+                    showTimeSelect // Ativar seleção de hora
+                    timeFormat="HH:mm:ss" // Formato da hora
+                    timeIntervals={15} // Intervalo de seleção de minutos
+                    timeCaption="Hora"
+                    className="custom-datepicker"
+                />
+                <DatePicker
+                    selected={endDate}
+                    onChange={handleEndDateChange}
+                    selectsEnd
+                    startDate={startDate}
+                    endDate={endDate}
+                    placeholderText="Data de fim"
+                    dateFormat="dd/MM/yyyy HH:mm:ss"
+                    showTimeSelect // Ativar seleção de hora
+                    timeFormat="HH:mm:ss" // Formato da hora
+                    timeIntervals={15} // Intervalo de seleção de minutos
+                    timeCaption="Hora"
+                    className="custom-datepicker"
+                />
             </div>
         </Container>
     );

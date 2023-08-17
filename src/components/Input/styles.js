@@ -11,7 +11,7 @@ export const Container = styled.select`
   text-align: center;
   font-size: 20px;
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  appearance: none; /* Remove a seta padrão do navegador */
+  //appearance: none; /* Remove a seta padrão do navegador */
 
 `;
 
