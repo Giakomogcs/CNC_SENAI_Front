@@ -26,7 +26,6 @@ export function TableWork() {
   return (
     <Container>
       <table>
-        <div className="table-container">
           <thead>
             <tr>
               <th>Date</th>
@@ -47,7 +46,6 @@ export function TableWork() {
               </tr>
             ))}
           </tbody>
-        </div>
       </table>
     </Container>
   );
