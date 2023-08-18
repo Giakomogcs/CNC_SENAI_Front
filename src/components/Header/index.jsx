@@ -30,14 +30,12 @@ export function Header({ onFilterChange }) {
     const formattedDate = format(date, 'dd/MM/yyyy HH:mm:ss');
     setStartDate(formattedDate);
     onFilterChange({ startDate: formattedDate, endDate, selectedMachine });
-    console.log(onFilterChange)
   };
 
   const handleEndDateChange = (date) => {
     const formattedDate = format(date, 'dd/MM/yyyy HH:mm:ss');
     setEndDate(formattedDate);
     onFilterChange({ startDate, endDate: formattedDate, selectedMachine });
-    console.log(onFilterChange)
   };
 
   const handleMachineChange = (event) => {

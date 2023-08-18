@@ -7,7 +7,6 @@ export function TableWork({ filter }) {
   const { startDate, endDate, selectedMachine } = filter;
 
   useEffect(() => {
-    console.log(selectedMachine)
     if (startDate && endDate || selectedMachine) {
       axios
       .get(`http://localhost:3333/data/${selectedMachine}`, {
@@ -18,7 +17,6 @@ export function TableWork({ filter }) {
       })
       .then(response => {
         setDatas(response.data.datas);
-        console.log(response.data.datas)
         })
         .catch(error => {
           console.error('Erro ao buscar dados do backend:', error);

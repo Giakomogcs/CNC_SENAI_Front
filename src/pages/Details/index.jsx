@@ -14,7 +14,6 @@ export function Details(){
   });
 
   const handleFilterChange = (newFilter) => {
-    console.log("filtrou")
     setFilter(newFilter);
   };
   

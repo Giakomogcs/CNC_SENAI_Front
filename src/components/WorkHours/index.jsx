@@ -8,7 +8,6 @@ export function WorkHours({ filter }) {
   const { startDate, endDate, selectedMachine } = filter;
 
   useEffect(() => {
-    console.log(selectedMachine)
     if (startDate && endDate || selectedMachine) {
       axios
       .get(`http://localhost:3333/data/${selectedMachine}`, {
@@ -19,7 +18,6 @@ export function WorkHours({ filter }) {
       })
       .then(response => {
         setDatas(response.data);
-        console.log(response.data)
         })
         .catch(error => {
           console.error('Erro ao buscar dados do backend:', error);
@@ -38,7 +36,7 @@ export function WorkHours({ filter }) {
     ];
   };
 
-  const COLORS = ['#0088FE', '#00C49F']; // Cores para as fatias do gráfico
+  const COLORS = ['#4AA250', '#E5C15E']; // Cores para as fatias do gráfico
 
   return (
     <Container>
@@ -67,7 +65,7 @@ export function WorkHours({ filter }) {
       <div className='Informations'>
         <div>
           <h2>Total de Horas: <p>{parseFloat(datas.shift).toFixed(1)}</p></h2>
-          <h2>Horas trabalhando: <p>{parseFloat(datas.work).toFixed(1)}</p></h2>
+          <h2>Horas trabalhadas: <p>{parseFloat(datas.work).toFixed(1)}</p></h2>
           <h2>Horas disponíveis: <p>{parseFloat(datas.available).toFixed(1)}</p> </h2>
         </div>
       </div>
