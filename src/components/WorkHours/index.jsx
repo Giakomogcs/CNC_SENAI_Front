@@ -48,8 +48,8 @@ export function WorkHours({ filter }) {
             nameKey="name"
             cx="50%"
             cy="50%"
-            outerRadius={120}
-            innerRadius={0} // Tamanho do buraco no centro
+            outerRadius={130}
+            innerRadius={64} // Tamanho do buraco no centro
             fill="#8884d8"
             label={({ value, percent }) => `${value.toFixed(1)}%`} // Formato do rótulo
           >

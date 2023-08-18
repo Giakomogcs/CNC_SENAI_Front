@@ -31,6 +31,9 @@ export const Content = styled.div`
 
     .Title{
         grid-area: "title";
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
     }
 
     .Graphic{
