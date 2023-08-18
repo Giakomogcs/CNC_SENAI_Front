@@ -64,9 +64,9 @@ export function WorkHours({ filter }) {
 
       <div className='Informations'>
         <div>
-          <h2>Total de Horas: <p>{parseFloat(datas.shift).toFixed(1)}</p></h2>
-          <h2>Horas trabalhadas: <p>{parseFloat(datas.work).toFixed(1)}</p></h2>
-          <h2>Horas disponíveis: <p>{parseFloat(datas.available).toFixed(1)}</p> </h2>
+          <h2>Total de Horas: <p className='total'>{parseFloat(datas.shift).toFixed(1)}</p></h2>
+          <h2>Horas trabalhadas: <p className='workH'>{parseFloat(datas.work).toFixed(1)}</p></h2>
+          <h2>Horas disponíveis: <p className='avaliableH'>{parseFloat(datas.available).toFixed(1)}</p> </h2>
         </div>
       </div>
 

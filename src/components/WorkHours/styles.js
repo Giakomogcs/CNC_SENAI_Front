@@ -49,6 +49,18 @@ export const Container = styled.div`
                     font-family: 'Poppins', sans-serif;
                 }
             }
+
+            .total{
+                color: ${({theme}) => theme.COLORS.LIGHT_300};
+            }
+
+            .workH{
+                color: ${({theme}) => theme.COLORS.WORKING_1};
+            }
+
+            .avaliableH{
+                color: ${({theme}) => theme.COLORS.AVAILABLE_1};
+            }
         }
 
     }
