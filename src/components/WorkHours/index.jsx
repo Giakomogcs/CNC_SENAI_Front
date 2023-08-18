@@ -29,15 +29,15 @@ export function WorkHours({ filter }) {
     const totalShift = datas.shift;
     const workingPercentage = ((datas.work / totalShift) * 100).toFixed(2);
     const availablePercentage = ((datas.available / totalShift) * 100).toFixed(2);
-
+    
     return [
       { name: 'Trabalhado', value: parseFloat(workingPercentage) },
       { name: 'Disponível', value: parseFloat(availablePercentage) },
     ];
   };
-
+  
   const COLORS = ['#4AA250', '#E5C15E']; // Cores para as fatias do gráfico
-
+  
   return (
     <Container>
       <div className='Grafico'>
@@ -64,9 +64,9 @@ export function WorkHours({ filter }) {
 
       <div className='Informations'>
         <div>
-          <h2>Total de Horas: <p className='total'>{parseFloat(datas.shift).toFixed(1)}</p></h2>
-          <h2>Horas trabalhadas: <p className='workH'>{parseFloat(datas.work).toFixed(1)}</p></h2>
-          <h2>Horas disponíveis: <p className='avaliableH'>{parseFloat(datas.available).toFixed(1)}</p> </h2>
+          <h2>Total de Horas: <p className='total'>{parseFloat(datas.shift).toFixed(2)}</p></h2>
+          <h2>Horas trabalhadas: <p className='workH'>{parseFloat(datas.work).toFixed(2)}</p></h2>
+          <h2>Horas disponíveis: <p className='avaliableH'>{parseFloat(datas.available).toFixed(2)}</p> </h2>
         </div>
       </div>
 
