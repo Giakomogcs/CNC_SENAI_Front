@@ -5,7 +5,7 @@ export const Container = styled.div`
 
     margin: 0;
     height: 600px;
-    overflow-y: scroll; 
+    overflow-y: auto; 
     position: relative;
 
     border-radius: 10px;

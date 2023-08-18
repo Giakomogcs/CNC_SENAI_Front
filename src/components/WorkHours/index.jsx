@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, TableCell } from './styles'; 
-import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
+import { Container } from './styles'; 
+import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 export function WorkHours({ filter }) {
   const [datas, setDatas] = useState([]);
@@ -9,7 +9,7 @@ export function WorkHours({ filter }) {
 
   useEffect(() => {
     console.log(selectedMachine)
-    if (startDate && endDate && selectedMachine) {
+    if (startDate && endDate || selectedMachine) {
       axios
       .get(`http://localhost:3333/data/${selectedMachine}`, {
         params: {
@@ -27,14 +27,51 @@ export function WorkHours({ filter }) {
     }
   }, [filter]);
 
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
+  const processData = () => {
+    const totalShift = datas.shift;
+    const workingPercentage = ((datas.work / totalShift) * 100).toFixed(2);
+    const availablePercentage = ((datas.available / totalShift) * 100).toFixed(2);
+
+    return [
+      { name: 'Trabalhado', value: parseFloat(workingPercentage) },
+      { name: 'Disponível', value: parseFloat(availablePercentage) },
+    ];
+  };
+
+  const COLORS = ['#0088FE', '#00C49F']; // Cores para as fatias do gráfico
 
   return (
-    <PieChart width={400} height={400}>
-      <Pie data={datas} dataKey={datas.working} nameKey="Working" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-      <Pie data={datas} dataKey={datas.available} nameKey="available" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
-      <Tooltip />
-      <Legend verticalAlign="bottom" height={36} />
-    </PieChart>
+    <Container>
+      <div className='Grafico'>
+        <PieChart width={600} height={400} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+          <Pie
+            data={processData()}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={120}
+            innerRadius={0} // Tamanho do buraco no centro
+            fill="#8884d8"
+            label={({ value, percent }) => `${value.toFixed(1)}%`} // Formato do rótulo
+          >
+            {processData().map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend verticalAlign="top" height={15} formatter={(value) => `${value}%`} />
+        </PieChart>  
+      </div>
+
+      <div className='Informations'>
+        <div>
+          <h2>Total de Horas: <p>{parseFloat(datas.shift).toFixed(1)}</p></h2>
+          <h2>Horas trabalhando: <p>{parseFloat(datas.work).toFixed(1)}</p></h2>
+          <h2>Horas disponíveis: <p>{parseFloat(datas.available).toFixed(1)}</p> </h2>
+        </div>
+      </div>
+
+    </Container>
   );
 }

@@ -8,7 +8,7 @@ export function TableWork({ filter }) {
 
   useEffect(() => {
     console.log(selectedMachine)
-    if (startDate && endDate && selectedMachine) {
+    if (startDate && endDate || selectedMachine) {
       axios
       .get(`http://localhost:3333/data/${selectedMachine}`, {
         params: {
